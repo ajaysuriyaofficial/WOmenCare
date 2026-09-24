@@ -145,8 +145,11 @@ function computeInsights(cycles) {
 /* ----------------------------------------------------------------------
    PERSISTENCE (NODE.JS + EXPRESS + MONGODB BACKEND)
 ------------------------------------------------------------------------ */
-const STORAGE_KEY = "period-tracker-data";
-const API_BASE_URL = "http://localhost:5000/api/user";
+const API_BASE_URL = import.meta.env.VITE_API_URL 
+  ? `${import.meta.env.VITE_API_URL}/api/user` 
+  : (window.location.hostname === "localhost" 
+      ? "http://localhost:5000/api/user" 
+      : "https://womencare-2.onrender.com/api/user");
 
 function getOrInitUserId() {
   let userId = localStorage.getItem("period-tracker-user-id");
