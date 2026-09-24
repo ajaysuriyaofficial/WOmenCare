@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap location (update domain with your live site URL)
+Sitemap: https://womencare.vercel.app/sitemap.xml
